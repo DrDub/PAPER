@@ -1,7 +1,8 @@
-# P.A.P.E.R. (Pablo's Artifacts and Papers Environment plus Repository)
+# P.A.P.E.R.
 
-P.A.P.E.R. helps keep track of metadata about what you read,
-breadcrumbs to find it again. It helps with known-item search.
+P.A.P.E.R. (Pablo's Artifacts and Papers Environment plus Repository)
+helps keep track of metadata about what you read, breadcrumbs to find
+it again. It helps with known-item search.
 
 It contains:
 
