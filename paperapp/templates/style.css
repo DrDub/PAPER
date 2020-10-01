@@ -1,0 +1,56 @@
+a:link {
+  text-decoration: none;
+  font-weight: normal;
+  color: #2c7bb5;
+}
+
+ a:visited {
+  text-decoration: none;
+  font-weight: normal;
+  color: #2c7bb5;
+}
+
+div.nav {
+  margin-top: 20px;
+}
+
+dl.link_list {
+  width: 100%;
+  overflow: hidden;
+  background: #fff;
+  padding: 0;
+  margin: 0
+}
+
+dl.link_list dt {
+  float: left;
+  width: 20%;
+  background: #ccc;
+  padding: 0;
+  margin: 0
+}
+dl.link_list dd {
+  float: left;
+  width: 80%;
+  background: #ddd
+  padding: 0;
+  margin: 0
+}
+
+dl.main_table {
+  background: #fff;
+}
+
+dl.main_table dt {
+  width: 70%;
+  background: #ccc;
+}
+dl.main_table dd {
+}
+
+ul.top_menu {
+	position: fixed;
+	right: 20px;
+	top: 10px;
+	background: #ccc; 
+}

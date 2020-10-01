@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Main Index{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock %}
+{% block content %}
+<h1>P.A.P.E.R. - Main Index</h1>
+
+<h2>Per Type</h2>
+<ul class="top_menu">
+{% for _type in _types %}
+      <li><a href="#{{_type}}">{{_type|replace('-',' ')|title}}</a></li>
+{% endfor %}
+</ul>
+
+{% for _type in _types %}
+<h2><a name="{{_type}}">{{_type|replace('-',' ')|title}}</a></h2>
+<ul class="link_list">
+{% for node in nodes[_type] %}
+      <li><a href="{{alter_base}}{{node.page}}">{{node.text}}</a></li>
+{% endfor %}
+</ul>
+
+{% endfor %}
+    
+{% endblock %}

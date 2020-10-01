@@ -1,0 +1,159 @@
+- type: types
+  types:
+    artifact:
+      bibtex:
+      - bibtex
+      date: []
+      external:
+      - external
+      found-date: []
+      found-in:
+      - search
+      - artifact
+      - external
+      id: []
+      note: []
+      on-disk:
+      - file
+      read:
+      - scenario
+      related-to:
+      - topic
+      status: []
+      text: []
+      type: []
+    bibtex:
+      address: []
+      author: []
+      biburl: []
+      booktitle: []
+      chapter: []
+      crossref: []
+      date: []
+      doi: []
+      editor: []
+      howpublished: []
+      id: []
+      institution: []
+      isbn: []
+      issn: []
+      issue: []
+      journal: []
+      link: []
+      meta: []
+      month: []
+      note: []
+      number: []
+      organization: []
+      pages: []
+      publisher: []
+      school: []
+      series: []
+      text: []
+      timestamp: []
+      title: []
+      type: []
+      volume: []
+      year: []
+    external:
+      cited-by: []
+      date: []
+      id: []
+      note: []
+      provider: []
+      text: []
+      type: []
+      url: []
+    file:
+      date: []
+      id: []
+      md5hash: []
+      mimetype: []
+      note: []
+      number: []
+      text: []
+      type: []
+    place:
+      date: []
+      id: []
+      note: []
+      text: []
+      type: []
+    reading-list:
+      artifacts:
+      - artifact
+      date: []
+      id: []
+      note: []
+      related-to:
+      - topic
+      text: []
+      type: []
+    relation:
+      date: []
+      id: []
+      note: []
+      source:
+      - artifact
+      target:
+      - artifact
+      text: []
+      type: []
+    scenario:
+      date: []
+      id: []
+      location:
+      - place
+      note: []
+      text: []
+      type: []
+    search:
+      date: []
+      id: []
+      note: []
+      related-to:
+      - topic
+      site: []
+      text: []
+      type: []
+    topic:
+      date: []
+      id: []
+      note: []
+      related-to:
+      - topic
+      text: []
+      type: []
+- author: Kate Fehlhaber
+  howpublished: Retrieved from Knowing Neurons. \url{https://knowingneurons.com/2014/10/29/hubel-and-wiesel-the-neural-basis-of-visual-perception/}
+  id: fehlhaber2014hubel
+  text: misc
+  title: Hubel and Wiesel and the Neural Basis of Visual Perception
+  type: bibtex
+  year: '2014'
+- &topic-cv
+  id: topic-cv
+  text: Computer Vision
+  type: topic
+- &paper-620
+  bibtex: &fehlhaber2014hubel {author: Kate Fehlhaber, howpublished: 'Retrieved
+        from Knowing Neurons. \url{https://knowingneurons.com/2014/10/29/hubel-and-wiesel-the-neural-basis-of-visual-perception/}',
+      id: fehlhaber2014hubel, text: misc, title: Hubel and Wiesel and the Neural Basis
+        of Visual Perception, type: bibtex, year: '2014'}
+  date: '2014'
+  found-date: '201803'
+  found-in: aavc18 course, 02-concepts
+  id: paper-620
+  note: '"there''s a myth that the brain cannot understand itself", indeed.'
+  read: 20180705, home yvr projected
+  related-to: *topic-cv
+  status: read
+  text: 'Hubel and Wiesel & the Neural Basis of Visual Perception -- Kate Fehlhaber -- 2014'
+  type: artifact
+- artifacts:
+  - *paper-620
+  id: reading-example
+  related-to: *topic-cv
+  text: Example reading list
+  type: reading-list
+        

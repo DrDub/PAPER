@@ -1,0 +1,27 @@
+<dl class="main_table">
+{% for entry in data %}
+  <dt>{{entry.key}}</dt>
+    <dd>
+  {% if entry.is_list %}
+      <ol>        
+      {% for entry2 in entry.value %}
+
+        <li>
+          {% if entry2.has_url 
+          %}<a href="{{entry2.has_url}}">{% endif %}{% if entry2.is_pre 
+          %}<pre>{% endif %}{{entry2.value}}{% if entry2.is_pre 
+          %}</pre>{% endif %}{% if entry2.has_url 
+          %}</a>{% endif %}
+        </li>
+      {% endfor %}
+      </ol>
+  {% else %}    
+      {% if entry.has_url 
+      %}<a href="{{entry.has_url}}">{% endif %}{% if entry.is_pre 
+      %}<pre>{% endif %}{{entry.value}}{% if entry.is_pre 
+      %}</pre>{% endif %}{% if entry.has_url 
+      %}</a>{% endif %}
+      {% endif %}    
+  </dd>
+{% endfor %}
+</dl>

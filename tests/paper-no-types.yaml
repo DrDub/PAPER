@@ -1,0 +1,33 @@
+- author: Kate Fehlhaber
+  howpublished: Retrieved from Knowing Neurons. \url{https://knowingneurons.com/2014/10/29/hubel-and-wiesel-the-neural-basis-of-visual-perception/}
+  id: fehlhaber2014hubel
+  text: misc
+  title: Hubel and Wiesel and the Neural Basis of Visual Perception
+  type: bibtex
+  year: '2014'
+- &topic-cv
+  id: topic-cv
+  text: Computer Vision
+  type: topic
+- &paper-620
+  bibtex: &fehlhaber2014hubel {author: Kate Fehlhaber, howpublished: 'Retrieved
+        from Knowing Neurons. \url{https://knowingneurons.com/2014/10/29/hubel-and-wiesel-the-neural-basis-of-visual-perception/}',
+      id: fehlhaber2014hubel, text: misc, title: Hubel and Wiesel and the Neural Basis
+        of Visual Perception, type: bibtex, year: '2014'}
+  date: '2014'
+  found-date: '201803'
+  found-in: aavc18 course, 02-concepts
+  id: paper-620
+  note: '"there''s a myth that the brain cannot understand itself", indeed.'
+  read: 20180705, home yvr projected
+  related-to: *topic-cv
+  status: read
+  text: 'Hubel and Wiesel & the Neural Basis of Visual Perception -- Kate Fehlhaber -- 2014'
+  type: artifact
+- artifacts:
+  - *paper-620
+  id: reading-example
+  related-to: *topic-cv
+  text: Example reading list
+  type: reading-list
+        

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="{{ alter_base }}style.css" type="text/css" />
+    <title>P.A.P.E.R. - {% block title %}{% endblock %}</title>
+    {% endblock %}
+</head>
+<body>
+    <div id="content">{% block content %}{% endblock %}</div>
+    <div id="footer">
+        {% block footer %}
+        &copy; Copyright 2012-2020 by <a href="http://duboue.net/">Pablo Duboue</a>.
+        {% endblock %}
+    </div>
+</body>
+</html>

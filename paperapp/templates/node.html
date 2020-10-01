@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}{{_type|title}}: {{_id|title}}{% endblock %}
+{% block head %}
+    {{ super() }}
+    <style type="text/css">
+        .important { color: #336699; }
+    </style>
+{% endblock %}
+{% block content %}
+  <h1>{{_type|title}}: {{_id|title}}</h1>
+<div class="nav">
+      <a href="index.html">Back to index</a>
+</div>
+{% include 'main_table.html' %}
+<h2>Backlinks</h2>
+<dl class="back_links">
+{% for entry in backlinks %}
+  <dt>{{entry.key}}<sup>-1</sup></dt>
+  <dl>
+    <ul class="link_list">
+     {% for node in entry.nodes %}
+      <li><a href="{{node.page}}">{{node.text}}</a></li>
+     {% endfor %}
+    </ul>
+  </dl>
+{% endfor %}
+</dl>
+
+    <div class="nav">
+      <p>
+        <a href="index.html">Back to index</a>
+      </p>
+    </div>  
+{% endblock %}
