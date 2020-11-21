@@ -590,6 +590,8 @@ class PaperRepo:
         return replacement
 
     def similarto(self, fileid, limit=20, numterms=50):
+        if type(fileid) is dict:
+            fileid = fileid['id']
         if fileid not in self.id_to_node:
             raise PaperError(filedid + " not found")
         node = self.id_to_node[fileid]
