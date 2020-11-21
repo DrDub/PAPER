@@ -22,7 +22,7 @@ def cli():
     else:
         print("""papercli usage:
 
-  papercli materialize yaml filerepo
+  papercli materialize yaml filerepo target
 
   papercli bibtex yaml filerepo citingrel
 

@@ -2,6 +2,7 @@ import hashlib
 import shutil
 import datetime
 import os
+import stat
 
 from magic import detect_from_content
 
@@ -40,10 +41,14 @@ class FileRepo:
         while file_id in inv_hashes:
             new_id += 1
             file_id = 'file-%d' % (new_id,)
-        hashes[md5hash] = file_id
 
         # copy it
-        shutil.copy(path_to_file, os.path.join(self.file_folder, self._number_to_file(new_id)))
+        dest_file = os.path.join(self.file_folder, self._number_to_file(new_id))
+        shutil.copy(path_to_file, dest_file)
+        hashes[md5hash] = file_id
+
+        # set read-only
+        os.chmod(dest_file, stat.S_IREAD|stat.S_IRGRP|stat.S_IROTH)
         
         now = datetime.datetime.now()
         result = analysis
@@ -78,7 +83,7 @@ class FileRepo:
 
         chars = [c for c in file_id_as_str]
         _file = None
-        for i in range(0,3):
+        for i in range(0, 3):
             if _file is None:
                 _file = str(chars.pop())
             else:

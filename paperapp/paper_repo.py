@@ -110,6 +110,9 @@ class PaperRepo:
     def __contains__(self, key):
         return key in self.id_to_node
 
+    def __iter__(self):
+        return iter(self.id_to_node.keys())
+
     def verify(self):
         self.counts_by_type = {}
         self.maxid_by_type = {}
@@ -171,6 +174,10 @@ class PaperRepo:
                     while md5hash in self.hashes:
                         random.shuffle(l)
                         md5hash = hashlib.md5("".join(l).encode('utf-8')).hexdigest()
+                if md5hash in self.hashes:
+                    raise PaperError('Repeated file in repo: {} and {} have hash {}'.format(node['id'],
+                                                                                            self.hashes[md5hash],
+                                                                                            md5hash))
                 self.hashes[md5hash] = node['id']
 
         # compute hash
@@ -439,29 +446,55 @@ class PaperRepo:
             raise PaperError("Id '%s' already exists: %s" % (_id, yaml.dump(self.id_to_node[_id])))
 
         return _id
-                    
+
+    ##############################################################################################
     # CLI helpers
     def get_nodes_by_type(self, _type):
+        """All nodes for a given type, this returns nodes not node ids."""
         return [node for node in self.repo if node['type'] == _type ]
 
     def get_nodes_on_topic(self, topic):
+        """All nodes for a given topic, including subtopics. This returns nodes not node ids."""  
         if type(topic) == str:
             topic = self.id_to_node[topic]
-        topic_id = topic['id']
+
+        children = dict()
+        topics = self.get_nodes_by_type("topic")
+        for top in topics:
+            children[top['id']] = set([])
+        for top in topics:
+            if 'related-to' in top:
+                if type(top['related-to']) == str:
+                    children[top['related-to']].add(top['id'])
+                elif type(top['related-to']) == list:
+                    for t in top['related-to']:
+                        children[t['related-to']['id']].add(top['id'])
+                else:
+                    children[top['related-to']['id']].add(top['id'])
+
+        prev_len = 0
+        closure = children[ topic['id'] ]
+        while len(closure) > prev_len:
+            prev_len = len(closure)
+            for _id in list(closure):
+                closure.update(children[_id])
+        topic_ids = closure
+        topic_ids.add(topic['id'])
+        
         result = []
         for node in self.repo:
             if 'related-to' in node:
                 topics = node['related-to']
                 if type(topics) is dict:
-                    if topics == topic:
+                    if topics['id'] in topic_ids:
                         result.append(node)
-                elif topic_id in [ other['id'] for other in topics]:
+                elif topic_ids.intersection([ other['id'] for other in topics]):
                     result.append(node)
         return result
 
     def register_file(self, path_to_file):
         """
-        Register the file and create a node for it.
+        Register the file and create a node for it. Returns the newly created node.
         """
         if not os.path.exists(path_to_file):
             raise PaperError("File '%s' not found" % (path_to_file,))
@@ -497,7 +530,7 @@ class PaperRepo:
         if not self.file_repo:
             raise PaperError("File repository not defined.")
         
-        nodes_or_keys = self.file_repo.process_folder(path_to_folder)
+        nodes_or_keys = self.file_repo.process_folder(path_to_folder, self.hashes)
 
         result = list()
 
@@ -508,7 +541,7 @@ class PaperRepo:
                 node = self.id_to_node[key]
             else:
                 node = node_or_key
-                self.hashes[node['md5hash']] = node['id']                
+                # hashes updated by file_repo
                 if self.search_index:
                     self.search_index.index_content(node['id'],
                                                     self.file_repo.get_absolute_path_to_file(node['number']),
@@ -588,6 +621,11 @@ class PaperRepo:
         return self._enhance_results(self.search_index.search(query_str, limit))
 
     def text(self, file_or_paperid):
+        """
+        Returns the text stored in the index for a given file or artifact node.
+        """
+        if type(file_or_paperid) is dict:
+            file_or_paperid = file_or_paperid['id']
         if file_or_paperid not in self.id_to_node:
             raise PaperError(file_or_paperid + " not found")
         node = self.id_to_node[file_or_paperid]
@@ -600,6 +638,22 @@ class PaperRepo:
         if not self.search_index:
             raise PaperError("Search index not initialized.")
         return self.search_index.text(node['id'])
+
+    def file(self, file_or_paperid):
+        """
+        Returns a file on disk for a given file or artifact node.
+        """
+        if type(file_or_paperid) is dict:
+            file_or_paperid = file_or_paperid['id']
+        if file_or_paperid not in self.id_to_node:
+            raise PaperError(file_or_paperid + " not found")
+        node = self.id_to_node[file_or_paperid]
+        if node['type'] == 'artifact':
+            if 'on-disk' in node:
+                node = node['on-disk']
+        if node['type'] != 'file':
+            raise PaperError("Node {} is not of type 'file'".format(node['id']))
+        return self.file_repo.get_absolute_path_to_file(node['id'])
     
     def set_default_topic(self, topic):
         """
@@ -620,6 +674,13 @@ class PaperRepo:
                 raise PaperError('Type "%s" can\'t be used as a context' % (search_or_paper['type']))
         self.default_context = search_or_paper
 
+    def reindex(self):
+        """
+        Trigger a reindexing process.
+        """
+        all_files = self.get_nodes_by_type('file')
+        self.search_index.refresh(all_files, self.file_repo)
+        
     # all these would be easier using **kwargs but I want to have the method signature to serve
     # as documentation for the users
     

@@ -42,7 +42,6 @@ notebook==6.1.4
 olefile==0.46
 packaging==20.4
 pandocfilters==1.4.2
--e git+git@github.com:DrDub/PAPER.git@e14b1d78b8efa779ba666f5799725f572e2b29b1#egg=paperapp_DrDub
 parso==0.7.1
 pdfminer.six==20181108
 pdftotext==2.1.5

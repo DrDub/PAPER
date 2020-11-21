@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="paperapp-DrDub",
-    version="0.0.1",
+    version="0.0.2",
     author="Pablo Duboue",
     author_email="pablo.duboue@gmail.com",
     description="Artifacts and Papers Environment plus Repository",
