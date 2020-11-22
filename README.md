@@ -36,7 +36,7 @@ It contains:
 ## Learning more
 
 Take a look at the ``sample_notebooks`` folder for examples and the
-``tests`` folder.
+``tests`` folder. The sample notebooks are rendered as HTML in https://drdub.github.io/PAPER/sample_notebooks/
 
 
 
