@@ -38,6 +38,8 @@ It contains:
 Take a look at the ``sample_notebooks`` folder for examples and the
 ``tests`` folder. The sample notebooks are rendered as HTML in https://drdub.github.io/PAPER/sample_notebooks/
 
+There is also a ``docs`` folder containing known issues, a detailed model explanation and slides from talks about the tool.
+
 
 
 ## Install
@@ -46,11 +48,22 @@ Take a look at the ``sample_notebooks`` folder for examples and the
 virtualenv -p python3 /path/to/virtualenv/paperapp
 source /path/to/virtualenv/paperapp/bin/activate
 pip install -r requirements.txt
+```
+
+To use the development version then issue (from the root of this repository):
+
+```bash
+pip install -e .
+```
+
+To use Jupyter notebooks inside this virtual environment, you need to register before launching it:
+
+```bash
 python -m ipykernel install --user --name=paperapp
 jupyter notebook
 ```
 
-From pip (test PyPI):
+Alternatively, it can be installed from pip (test PyPI):
 
 ```bash
 python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps paperapp_DrDub
