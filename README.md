@@ -38,8 +38,10 @@ It contains:
 Take a look at the ``sample_notebooks`` folder for examples and the
 ``tests`` folder. The sample notebooks are rendered as HTML in https://drdub.github.io/PAPER/sample_notebooks/
 
-There is also a ``docs`` folder containing known issues, a detailed model explanation and slides from talks about the tool.
+There is also a ``docs`` folder containing known issues, a detailed model explanation and slides from talks about the tool. The following talks are in YouTube:
 
+* [Vancouver Learn Data Science Lighting talk, 2020/09/30](https://www.youtube.com/watch?v=BQkll6pACKw).
+* [Montreal Python talk, 2021/09/21](https://youtu.be/PFPYqpDBgjg?t=3849).
 
 
 ## Install

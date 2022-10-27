@@ -10,4 +10,4 @@ In this folder:
 Talks:
 
 * [Vancouver Learn Data Science Lighting talk, 2020/09/30](20200930_learnds_lighting.pdf). Also in [YouTube](https://www.youtube.com/watch?v=BQkll6pACKw).
-* [Montreal Python talk, 2021/09/21](20210921_mtlpy.pdf).
+* [Montreal Python talk, 2021/09/21](20210921_mtlpy.pdf). Also in [YouTube](https://youtu.be/PFPYqpDBgjg?t=3849).
