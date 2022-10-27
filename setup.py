@@ -24,7 +24,7 @@ setuptools.setup(
             'jupyter>=1.0.0'
             ],
         'fulltext' : [
-            'whoosh-2.7.4',
+            'Whoosh-2.7.4',
             'pypandoc>=1.5',
             'pdftotext>=2.1.5',
             'textract>=1.6.3'
