@@ -13239,109 +13239,115 @@ div#notebook {
     </script>
     <!-- End of mathjax configuration --></head>
 <body>
-  <div tabindex="-1" id="notebook" class="border-box-sizing">
-    <div class="container" id="notebook-container">
+	
+<div tabindex="-1" id="notebook" class="border-box-sizing">
+<div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt"></div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="Create-a-test-repo">Create a test repo<a class="anchor-link" href="#Create-a-test-repo">&#182;</a></h1><p>This mimicks the code in <code>tests/test_search.py</code></p>
 
 </div>
 </div>
 </div>
+	
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span> rm -rf data/paper-model2.yaml data/files data/index
-<span class="o">!</span> mkdir data/files
-<span class="o">!</span> mkdir data/index
-</pre></div>
+<div class="input_area">
+	
+<div class=" highlight hl-ipython3">
+  <pre>
+    <span></span><span class="o">!</span> rm -rf data/paper-model2.yaml data/files data/index
+    <span class="o">!</span> mkdir data/files
+    <span class="o">!</span> mkdir data/index
+  </pre>
+</div>
 
-    </div>
 </div>
 </div>
-
 </div>
+</div>
+	
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">paperapp.paper_repo</span> <span class="k">import</span> <span class="n">PaperRepo</span>
-<span class="kn">from</span> <span class="nn">paperapp.paper_ipython</span> <span class="k">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">paperapp.paper_bibtex</span> <span class="k">import</span> <span class="n">import_bibtex</span>
-
-<span class="n">p</span> <span class="o">=</span> <span class="n">PaperRepo</span><span class="p">(</span><span class="s2">&quot;data/paper-model2.yaml&quot;</span><span class="p">,</span> <span class="s2">&quot;data/files&quot;</span><span class="p">,</span> <span class="s2">&quot;data/index&quot;</span><span class="p">,</span> <span class="n">auto_save</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-</pre></div>
-
-    </div>
+<div class="input_area">
+	
+<div class=" highlight hl-ipython3">
+  <pre>
+    <span></span><span class="kn">from</span> <span class="nn">paperapp.paper_repo</span> <span class="k">import</span> <span class="n">PaperRepo</span>
+    <span class="kn">from</span> <span class="nn">paperapp.paper_ipython</span> <span class="k">import</span> <span class="o">*</span>
+    <span class="kn">from</span> <span class="nn">paperapp.paper_bibtex</span> <span class="k">import</span> <span class="n">import_bibtex</span>
+    <span class="n">p</span> <span class="o">=</span> <span class="n">PaperRepo</span><span class="p">(</span><span class="s2">&quot;data/paper-model2.yaml&quot;</span><span class="p">,</span> <span class="s2">&quot;data/files&quot;</span><span class="p">,</span> <span class="s2">&quot;data/index&quot;</span><span class="p">,</span> <span class="n">auto_save</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+  </pre>	
+</div>
+	
 </div>
 </div>
-
 </div>
+</div>
+	
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ids</span> <span class="o">=</span> <span class="n">import_bibtex</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">,</span> <span class="s1">&#39;tests&#39;</span><span class="p">,</span> <span class="s1">&#39;duboue.bib&#39;</span><span class="p">),</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">create_papers</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-
-<span class="n">bib_to_paper</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="k">for</span> <span class="n">paper_id</span> <span class="ow">in</span> <span class="n">ids</span><span class="p">:</span>
+<div class="input_area">
+	
+<div class=" highlight hl-ipython3">
+  <pre>
+    <span></span><span class="n">ids</span> <span class="o">=</span> <span class="n">import_bibtex</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;..&#39;</span><span class="p">,</span> <span class="s1">&#39;tests&#39;</span><span class="p">,</span> <span class="s1">&#39;duboue.bib&#39;</span><span class="p">),</span> <span class="n">verbose</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">create_papers</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="n">bib_to_paper</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">paper_id</span> <span class="ow">in</span> <span class="n">ids</span><span class="p">:</span>
     <span class="n">paper</span> <span class="o">=</span> <span class="n">p</span><span class="p">[</span><span class="n">paper_id</span><span class="p">]</span>
     <span class="n">bib_to_paper</span><span class="p">[</span><span class="n">paper</span><span class="p">[</span><span class="s1">&#39;bibtex&#39;</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]]</span> <span class="o">=</span> <span class="n">paper</span>
-
-<span class="n">ondisk</span> <span class="o">=</span> <span class="p">[</span> <span class="p">(</span> <span class="s1">&#39;duboue2019dialect&#39;</span><span class="p">,</span> <span class="s1">&#39;CLEI2019dialect.pdf&#39;</span> <span class="p">),</span>
-           <span class="p">(</span> <span class="s1">&#39;ying-duboue-2019-rationale&#39;</span><span class="p">,</span> <span class="s1">&#39;W19-5503.pdf&#39;</span> <span class="p">),</span>
-           <span class="p">(</span> <span class="s1">&#39;duboue2018choice&#39;</span><span class="p">,</span> <span class="s1">&#39;ASAI2018choice.pdf&#39;</span> <span class="p">),</span>
-           <span class="p">(</span> <span class="s1">&#39;Duboue_al_2013&#39;</span> <span class="p">,</span> <span class="s1">&#39;05-NTCIR10-1CLICK-PabloD.pdf&#39;</span> <span class="p">),</span>
-           <span class="p">(</span> <span class="s1">&#39;duboue_2013_ENLG2&#39;</span><span class="p">,</span> <span class="s1">&#39;W13-2129.pdf&#39;</span> <span class="p">),</span>
-           <span class="p">(</span> <span class="s1">&#39;Jing_al_12&#39;</span><span class="p">,</span> <span class="s1">&#39;C12-1069.pdf&#39;</span> <span class="p">),</span>
-           <span class="p">(</span> <span class="s1">&#39;Pacheco_al_12&#39;</span><span class="p">,</span> <span class="s1">&#39;N12-1082.pdf&#39;</span> <span class="p">),</span>
-           <span class="p">(</span> <span class="s1">&#39;Duboue_12&#39;</span><span class="p">,</span> <span class="s1">&#39;INLG2012duboue.pdf&#39;</span> <span class="p">),</span>
-           <span class="p">(</span> <span class="s1">&#39;Ferrucci_al_08&#39;</span><span class="p">,</span> <span class="s1">&#39;rc24789.pdf&#39;</span> <span class="p">),</span>
-           <span class="p">(</span> <span class="s1">&#39;Duboue_Chu-Carrol_06&#39;</span><span class="p">,</span> <span class="s1">&#39;N06-2009.pdf&#39;</span> <span class="p">),</span>
-           <span class="p">(</span> <span class="s1">&#39;Prager_al_06&#39;</span><span class="p">,</span> <span class="s1">&#39;P06-1135.pdf&#39;</span> <span class="p">),</span>
-           <span class="p">(</span> <span class="s1">&#39;Duboue_McKeown_03a&#39;</span><span class="p">,</span> <span class="s1">&#39;W03-1016.pdf&#39;</span> <span class="p">),</span>
-           <span class="p">(</span> <span class="s1">&#39;Costa_Duboue_04&#39;</span><span class="p">,</span> <span class="s1">&#39;ASAI04distributed.pdf&#39;</span> <span class="p">),</span>
-           <span class="p">(</span> <span class="s1">&#39;Hatzivassiloglou_al_01a&#39;</span><span class="p">,</span> <span class="s1">&#39;ISMB2001disambiguation.pdf&#39;</span> <span class="p">)</span> <span class="p">]</span>
-    
-<span class="k">for</span> <span class="n">entry</span><span class="p">,</span> <span class="n">fname</span> <span class="ow">in</span> <span class="n">ondisk</span><span class="p">:</span>
+    <span class="n">ondisk</span> <span class="o">=</span> <span class="p">[</span> <span class="p">(</span> <span class="s1">&#39;duboue2019dialect&#39;</span><span class="p">,</span> <span class="s1">&#39;CLEI2019dialect.pdf&#39;</span> <span class="p">),</span>
+    <span class="p">(</span> <span class="s1">&#39;ying-duboue-2019-rationale&#39;</span><span class="p">,</span> <span class="s1">&#39;W19-5503.pdf&#39;</span> <span class="p">),</span>
+    <span class="p">(</span> <span class="s1">&#39;duboue2018choice&#39;</span><span class="p">,</span> <span class="s1">&#39;ASAI2018choice.pdf&#39;</span> <span class="p">),</span>
+    <span class="p">(</span> <span class="s1">&#39;Duboue_al_2013&#39;</span> <span class="p">,</span> <span class="s1">&#39;05-NTCIR10-1CLICK-PabloD.pdf&#39;</span> <span class="p">),</span>
+    <span class="p">(</span> <span class="s1">&#39;duboue_2013_ENLG2&#39;</span><span class="p">,</span> <span class="s1">&#39;W13-2129.pdf&#39;</span> <span class="p">),</span>
+    <span class="p">(</span> <span class="s1">&#39;Jing_al_12&#39;</span><span class="p">,</span> <span class="s1">&#39;C12-1069.pdf&#39;</span> <span class="p">),</span>
+    <span class="p">(</span> <span class="s1">&#39;Pacheco_al_12&#39;</span><span class="p">,</span> <span class="s1">&#39;N12-1082.pdf&#39;</span> <span class="p">),</span>
+    <span class="p">(</span> <span class="s1">&#39;Duboue_12&#39;</span><span class="p">,</span> <span class="s1">&#39;INLG2012duboue.pdf&#39;</span> <span class="p">),</span>
+    <span class="p">(</span> <span class="s1">&#39;Ferrucci_al_08&#39;</span><span class="p">,</span> <span class="s1">&#39;rc24789.pdf&#39;</span> <span class="p">),</span>
+    <span class="p">(</span> <span class="s1">&#39;Duboue_Chu-Carrol_06&#39;</span><span class="p">,</span> <span class="s1">&#39;N06-2009.pdf&#39;</span> <span class="p">),</span>
+    <span class="p">(</span> <span class="s1">&#39;Prager_al_06&#39;</span><span class="p">,</span> <span class="s1">&#39;P06-1135.pdf&#39;</span> <span class="p">),</span>
+    <span class="p">(</span> <span class="s1">&#39;Duboue_McKeown_03a&#39;</span><span class="p">,</span> <span class="s1">&#39;W03-1016.pdf&#39;</span> <span class="p">),</span>
+    <span class="p">(</span> <span class="s1">&#39;Costa_Duboue_04&#39;</span><span class="p">,</span> <span class="s1">&#39;ASAI04distributed.pdf&#39;</span> <span class="p">),</span>
+    <span class="p">(</span> <span class="s1">&#39;Hatzivassiloglou_al_01a&#39;</span><span class="p">,</span> <span class="s1">&#39;ISMB2001disambiguation.pdf&#39;</span> <span class="p">)</span> <span class="p">]</span>
+    <span class="k">for</span> <span class="n">entry</span><span class="p">,</span> <span class="n">fname</span> <span class="ow">in</span> <span class="n">ondisk</span><span class="p">:</span>
     <span class="n">bib_to_paper</span><span class="p">[</span><span class="n">entry</span><span class="p">][</span><span class="s1">&#39;on-disk&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">register_file</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;..&quot;</span><span class="p">,</span> <span class="s2">&quot;tests&quot;</span><span class="p">,</span> <span class="n">fname</span><span class="p">))</span>
-    
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Imported &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ids</span><span class="p">),</span> <span class="s2">&quot; entries&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Index contains&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ondisk</span><span class="p">),</span> <span class="s2">&quot; files&quot;</span><span class="p">)</span>
-</pre></div>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Imported &quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ids</span><span class="p">),</span> <span class="s2">&quot; entries&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Index contains&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">ondisk</span><span class="p">),</span> <span class="s2">&quot; files&quot;</span><span class="p">)</span>
+  </pre> 
+</div>
 
-    </div>
+</div>
 </div>
 </div>
 
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
+	
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Imported  44  entries
-Index contains 14  files
-</pre>
+  <pre>
+     Imported  44  entries
+     Index contains 14  files
+  </pre>
+</div>
+	
 </div>
 </div>
-
 </div>
 </div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+	
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt"></div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Access-the-extracted-text">Access the extracted text<a class="anchor-link" href="#Access-the-extracted-text">&#182;</a></h2>
 </div>
@@ -13351,146 +13357,148 @@ Index contains 14  files
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">bib_to_paper</span><span class="p">[</span><span class="s1">&#39;Ferrucci_al_08&#39;</span><span class="p">])[:</span><span class="mi">500</span><span class="p">])</span>
-</pre></div>
-
-    </div>
+<div class="input_area">
+	
+<div class=" highlight hl-ipython3">
+  <pre>
+    <span></span><span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">bib_to_paper</span><span class="p">[</span><span class="s1">&#39;Ferrucci_al_08&#39;</span><span class="p">])[:</span><span class="mi">500</span><span class="p">])</span>
+  </pre>
+</div>
+	
+</div>
 </div>
 </div>
 
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>RC24789 (W0904-093) April 22, 2009
-Computer Science
-
-
-
+<div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">	
+  <pre>
+                 RC24789 (W0904-093) April 22, 2009
+                         Computer Science
 
                         IBM Research Report
              Towards the Open Advancement of Question
                          Answering Systems
 
    David Ferrucci1, Eric Nyberg2, James Allan3, Ken Barker4, Eric Brown1,
-    Jennifer Chu-Carroll1, Arthur Ciccolo1, Pablo Duboue1, James Fan1,
- David Gondek1, Eduard Hovy5, Boris Katz6, Adam Lally1, Michael McCord1,
+     Jennifer Chu-Carroll1, Arthur Ciccolo1, Pablo Duboue1, James Fan1,
+   David Gondek1, Eduard Hovy5, Boris Katz6, Adam Lally1, Michael McCord1,
        Paul Morarescu1, Bill Murdock1, Bruce Porter4, John Prager1,
-          Tomek 
-</pre>
+       Tomek 
+  </pre>	
+</div>
+	
 </div>
 </div>
-
 </div>
 </div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+	
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Similarity-based-queries">Similarity-based queries<a class="anchor-link" href="#Similarity-based-queries">&#182;</a></h2>
 </div>
 </div>
 </div>
+	
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">base</span> <span class="o">=</span> <span class="n">bib_to_paper</span><span class="p">[</span><span class="s1">&#39;Ferrucci_al_08&#39;</span><span class="p">]</span>
-<span class="n">results</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">similarto</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Papers similar to &quot;</span><span class="p">,</span> <span class="n">base</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">],</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">pp</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
+<div class="input_area">
+	
+<div class=" highlight hl-ipython3">
+  <pre>
+    <span></span><span class="n">base</span> <span class="o">=</span> <span class="n">bib_to_paper</span><span class="p">[</span><span class="s1">&#39;Ferrucci_al_08&#39;</span><span class="p">]</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">similarto</span><span class="p">(</span><span class="n">base</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Papers similar to &quot;</span><span class="p">,</span> <span class="n">base</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">],</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">pp</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">pp</span><span class="p">[</span><span class="s1">&#39;paper&#39;</span><span class="p">][</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
-</pre></div>
+  </pre>
+</div>
 
-    </div>
+</div>
 </div>
 </div>
 
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
+	
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Papers similar to  Towards the Open Advancement of Question Answering Systems -- David Ferrucci and Eric Nyberg and James Allen and Ken Barker and Eric W. Brown and Jennifer Chu-Carroll and Arthur Ciccolo and Pablo A. Duboue and James Fan and David Gondek and Edward Hovy and Boris Katz and Adam Lally and Michael McCord and Paul Morarescu and J. William Murdock and Bruce Porter and John M. Prager and Tomek Strzalkowski and Christopher Welty and Wlodek Zadrozny 
-
-	 1 	 Improving {QA} Accuracy by Question Inversion -- John M. Prager and Pablo A. Duboue and Jennifer Chu-Carroll
-	 2 	 Answering the question you wish they had asked: The impact of paraphrasing for Question Answering -- Pablo A. Duboue and Jennifer Chu-Carroll
-	 3 	 Hunter Gatherer: UdeM at 1Click-2 -- Duboue, Pablo and He, Jing and Nie, Jian-Yun
-	 4 	 Bridging the Gap between Intrinsic and Perceived Relevance in Snippet Generation -- He, Jing and Duboue, Pablo and Nie,  Jian-Yun
-	 5 	 Disambiguating Proteins, Genes, and {RNA} in Text: A Machine Learning Approach -- Vasileios Hatzivassiloglou and Pablo A. Duboue and Andrey Rzhetsky
-	 6 	 Rationale Classification for Educational Trading Platforms -- Ying, Annie  and  Duboue, Pablo
-	 7 	 Deobfuscating Name Scrambling as a Natural Language Generation Task -- Duboue, Pablo Ariel
-	 8 	 Impact of Spanish Dialect in Deep Learning Next Sentence Predictors -- Duboue, Pablo Ariel
-	 9 	 On The Feasibility of Open Domain Referring Expression Generation Using Large Scale Folksonomies -- Pacheco, Fabian  and  Duboue, Pablo  and  Dominguez, Martin
-	 10 	 Distributed Ontological Encoding Through Symbol Recirculation -- Maria Jimena Costa and Pablo A. Duboue
-	 11 	 Statistical Acquisition of Content Selection Rules for Natural Language Generation -- Pablo A. Duboue and Kathleen R. McKeown
-	 12 	 Thoughtland: Natural Language Descriptions for Machine Learning n-dimensional Error Functions -- Duboue, Pablo
-	 13 	 Extractive email thread summarization: Can we do better than He Said She Said? -- Pablo A. Duboue
-</pre>
+  <pre> 
+       Papers similar to  Towards the Open Advancement of Question Answering Systems -- David Ferrucci and Eric Nyberg and James Allen and Ken Barker and Eric W. Brown and Jennifer Chu-Carroll and Arthur Ciccolo and Pablo A. Duboue and James Fan and David Gondek and Edward Hovy and Boris Katz and Adam Lally and Michael McCord and Paul Morarescu and J. William Murdock and Bruce Porter and John M. Prager and Tomek Strzalkowski and Christopher Welty and Wlodek Zadrozny
+       
+	 1.   Improving {QA} Accuracy by Question Inversion -- John M. Prager and Pablo A. Duboue and Jennifer Chu-Carroll
+	 2.   Answering the question you wish they had asked: The impact of paraphrasing for Question Answering -- Pablo A. Duboue and Jennifer Chu-Carroll
+	 3.   Hunter Gatherer: UdeM at 1Click-2 -- Duboue, Pablo and He, Jing and Nie, Jian-Yun
+	 4.   Bridging the Gap between Intrinsic and Perceived Relevance in Snippet Generation -- He, Jing and Duboue, Pablo and Nie,  Jian-Yun
+	 5.   Disambiguating Proteins, Genes, and {RNA} in Text: A Machine Learning Approach -- Vasileios Hatzivassiloglou and Pablo A. Duboue and Andrey Rzhetsky
+	 6.   Rationale Classification for Educational Trading Platforms -- Ying, Annie  and  Duboue, Pablo
+	 7.   Deobfuscating Name Scrambling as a Natural Language Generation Task -- Duboue, Pablo Ariel
+	 8.   Impact of Spanish Dialect in Deep Learning Next Sentence Predictors -- Duboue, Pablo Ariel
+	 9.   On The Feasibility of Open Domain Referring Expression Generation Using Large Scale Folksonomies -- Pacheco, Fabian  and  Duboue, Pablo  and  Dominguez, Martin
+	 10.  Distributed Ontological Encoding Through Symbol Recirculation -- Maria Jimena Costa and Pablo A. Duboue
+	 11.  Statistical Acquisition of Content Selection Rules for Natural Language Generation -- Pablo A. Duboue and Kathleen R. McKeown
+	 12.  Thoughtland: Natural Language Descriptions for Machine Learning n-dimensional Error Functions -- Duboue, Pablo
+	 13.  Extractive email thread summarization: Can we do better than He Said She Said? -- Pablo A. Duboue
+  </pre>	
+</div>
+	
 </div>
 </div>
-
 </div>
 </div>
-
-</div>
+	
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">base</span> <span class="o">=</span> <span class="n">bib_to_paper</span><span class="p">[</span><span class="s1">&#39;Costa_Duboue_04&#39;</span><span class="p">]</span>
-<span class="n">results</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">similarto</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Papers similar to &quot;</span><span class="p">,</span> <span class="n">base</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">],</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">pp</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
+<div class="input_area">
+	
+<div class=" highlight hl-ipython3"> 
+  <pre> 
+    <span></span><span class="n">base</span> <span class="o">=</span> <span class="n">bib_to_paper</span><span class="p">[</span><span class="s1">&#39;Costa_Duboue_04&#39;</span><span class="p">]</span>
+    <span class="n">results</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">similarto</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Papers similar to &quot;</span><span class="p">,</span> <span class="n">base</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">],</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">pp</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">pp</span><span class="p">[</span><span class="s1">&#39;paper&#39;</span><span class="p">][</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
-</pre></div>
+  </pre>
+</div>
 
-    </div>
+</div>
 </div>
 </div>
 
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Papers similar to  Distributed Ontological Encoding Through Symbol Recirculation -- Maria Jimena Costa and Pablo A. Duboue 
-
-	 1 	 Rationale Classification for Educational Trading Platforms -- Ying, Annie  and  Duboue, Pablo
-	 2 	 Impact of Spanish Dialect in Deep Learning Next Sentence Predictors -- Duboue, Pablo Ariel
-	 3 	 Disambiguating Proteins, Genes, and {RNA} in Text: A Machine Learning Approach -- Vasileios Hatzivassiloglou and Pablo A. Duboue and Andrey Rzhetsky
-	 4 	 Improving {QA} Accuracy by Question Inversion -- John M. Prager and Pablo A. Duboue and Jennifer Chu-Carroll
-	 5 	 Deobfuscating Name Scrambling as a Natural Language Generation Task -- Duboue, Pablo Ariel
-</pre>
+<div class="prompt"></div>
+	
+<div class="output_subarea output_stream output_stdout output_text">	
+  <pre> 
+        Papers similar to  Distributed Ontological Encoding Through Symbol Recirculation -- Maria Jimena Costa and Pablo A. Duboue 
+	
+	 1.  Rationale Classification for Educational Trading Platforms -- Ying, Annie  and  Duboue, Pablo
+	 2.  Impact of Spanish Dialect in Deep Learning Next Sentence Predictors -- Duboue, Pablo Ariel
+	 3.  Disambiguating Proteins, Genes, and {RNA} in Text: A Machine Learning Approach -- Vasileios Hatzivassiloglou and Pablo A. Duboue and Andrey Rzhetsky
+	 4.  Improving {QA} Accuracy by Question Inversion -- John M. Prager and Pablo A. Duboue and Jennifer Chu-Carroll
+	 5.  Deobfuscating Name Scrambling as a Natural Language Generation Task -- Duboue, Pablo Ariel
+  </pre>	
+</div>
+	
 </div>
 </div>
-
 </div>
 </div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+	
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Text-queries">Text queries<a class="anchor-link" href="#Text-queries">&#182;</a></h2>
 </div>
@@ -13500,76 +13508,80 @@ Computer Science
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">pp</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;question answering&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)):</span>
+<div class="input_area">
+	
+<div class=" highlight hl-ipython3">
+  <pre>
+    <span></span><span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">pp</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;question answering&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">pp</span><span class="p">[</span><span class="s1">&#39;paper&#39;</span><span class="p">][</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
-</pre></div>
+  </pre>
+</div>
 
-    </div>
+</div>
 </div>
 </div>
 
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
+<div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>	 1 	 Answering the question you wish they had asked: The impact of paraphrasing for Question Answering -- Pablo A. Duboue and Jennifer Chu-Carroll
-	 2 	 Improving {QA} Accuracy by Question Inversion -- John M. Prager and Pablo A. Duboue and Jennifer Chu-Carroll
-	 3 	 Towards the Open Advancement of Question Answering Systems -- David Ferrucci and Eric Nyberg and James Allen and Ken Barker and Eric W. Brown and Jennifer Chu-Carroll and Arthur Ciccolo and Pablo A. Duboue and James Fan and David Gondek and Edward Hovy and Boris Katz and Adam Lally and Michael McCord and Paul Morarescu and J. William Murdock and Bruce Porter and John M. Prager and Tomek Strzalkowski and Christopher Welty and Wlodek Zadrozny
-	 4 	 Hunter Gatherer: UdeM at 1Click-2 -- Duboue, Pablo and He, Jing and Nie, Jian-Yun
-	 5 	 Extractive email thread summarization: Can we do better than He Said She Said? -- Pablo A. Duboue
-</pre>
+  <pre>	
+         1    Answering the question you wish they had asked: The impact of paraphrasing for Question Answering -- Pablo A. Duboue and Jennifer Chu-Carroll
+	 2    Improving {QA} Accuracy by Question Inversion -- John M. Prager and Pablo A. Duboue and Jennifer Chu-Carroll
+	 3    Towards the Open Advancement of Question Answering Systems -- David Ferrucci and Eric Nyberg and James Allen and Ken Barker and Eric W. Brown and Jennifer Chu-Carroll and Arthur Ciccolo and Pablo A. Duboue and James Fan and David Gondek and Edward Hovy and Boris Katz and Adam Lally and Michael McCord and Paul Morarescu and J. William Murdock and Bruce Porter and John M. Prager and Tomek Strzalkowski and Christopher Welty and Wlodek Zadrozny
+	 4    Hunter Gatherer: UdeM at 1Click-2 -- Duboue, Pablo and He, Jing and Nie, Jian-Yun
+	 5    Extractive email thread summarization: Can we do better than He Said She Said? -- Pablo A. Duboue
+  </pre>
+</div>
+	
 </div>
 </div>
-
 </div>
 </div>
-
-</div>
+	
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">pp</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;summarization&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">pp</span><span class="p">[</span><span class="s1">&#39;paper&#39;</span><span class="p">][</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
-</pre></div>
+<div class="input_area">
+	
+<div class=" highlight hl-ipython3">
+ <pre>
+   <span>
+   </span><span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">pp</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;summarization&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)):</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">pp</span><span class="p">[</span><span class="s1">&#39;paper&#39;</span><span class="p">][</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
+ </pre>
+</div>
 
-    </div>
+</div>
 </div>
 </div>
 
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
-
+<div class="prompt"></div>
+	
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>	 1 	 Bridging the Gap between Intrinsic and Perceived Relevance in Snippet Generation -- He, Jing and Duboue, Pablo and Nie,  Jian-Yun
-	 2 	 Extractive email thread summarization: Can we do better than He Said She Said? -- Pablo A. Duboue
-	 3 	 On The Feasibility of Open Domain Referring Expression Generation Using Large Scale Folksonomies -- Pacheco, Fabian  and  Duboue, Pablo  and  Dominguez, Martin
-	 4 	 Hunter Gatherer: UdeM at 1Click-2 -- Duboue, Pablo and He, Jing and Nie, Jian-Yun
-	 5 	 Deobfuscating Name Scrambling as a Natural Language Generation Task -- Duboue, Pablo Ariel
-</pre>
+  <pre>
+         1    Bridging the Gap between Intrinsic and Perceived Relevance in Snippet Generation -- He, Jing and Duboue, Pablo and Nie,  Jian-Yun
+	 2    Extractive email thread summarization: Can we do better than He Said She Said? -- Pablo A. Duboue
+	 3    On The Feasibility of Open Domain Referring Expression Generation Using Large Scale Folksonomies -- Pacheco, Fabian  and  Duboue, Pablo  and  Dominguez, Martin
+	 4    Hunter Gatherer: UdeM at 1Click-2 -- Duboue, Pablo and He, Jing and Nie, Jian-Yun
+	 5    Deobfuscating Name Scrambling as a Natural Language Generation Task -- Duboue, Pablo Ariel
+  </pre>
+</div>
+	
 </div>
 </div>
-
 </div>
 </div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div><div class="inner_cell">
+	
+<div class="cell border-box-sizing text_cell rendered"> 
+<div class="prompt input_prompt"></div>
+<div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h2 id="Boolean-queries">Boolean queries<a class="anchor-link" href="#Boolean-queries">&#182;</a></h2>
 </div>
@@ -13579,106 +13591,110 @@ Computer Science
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">pp</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;summarization AND NOT ( question answering )&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)):</span>
+<div class="input_area">
+	
+<div class=" highlight hl-ipython3">
+  <pre>
+    <span></span><span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">pp</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;summarization AND NOT ( question answering )&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">pp</span><span class="p">[</span><span class="s1">&#39;paper&#39;</span><span class="p">][</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
-</pre></div>
+  </pre>
+</div>
 
-    </div>
+</div>
 </div>
 </div>
 
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
+<div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>	 1 	 Bridging the Gap between Intrinsic and Perceived Relevance in Snippet Generation -- He, Jing and Duboue, Pablo and Nie,  Jian-Yun
-	 2 	 On The Feasibility of Open Domain Referring Expression Generation Using Large Scale Folksonomies -- Pacheco, Fabian  and  Duboue, Pablo  and  Dominguez, Martin
-	 3 	 Deobfuscating Name Scrambling as a Natural Language Generation Task -- Duboue, Pablo Ariel
-</pre>
+  <pre>
+         1    Bridging the Gap between Intrinsic and Perceived Relevance in Snippet Generation -- He, Jing and Duboue, Pablo and Nie,  Jian-Yun
+	 2    On The Feasibility of Open Domain Referring Expression Generation Using Large Scale Folksonomies -- Pacheco, Fabian  and  Duboue, Pablo  and  Dominguez, Martin
+	 3    Deobfuscating Name Scrambling as a Natural Language Generation Task -- Duboue, Pablo Ariel
+  </pre>
+</div>
+	
 </div>
 </div>
-
 </div>
 </div>
-
-</div>
+	
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[10]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">pp</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;feature AND selection AND NOT ( dimensionality OR reduction)&quot;</span><span class="p">)):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">pp</span><span class="p">[</span><span class="s1">&#39;paper&#39;</span><span class="p">][</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
-</pre></div>
+<div class="input_area">
+	
+<div class=" highlight hl-ipython3">
+  <pre>
+     <span></span><span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">pp</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;feature AND selection AND NOT ( dimensionality OR reduction)&quot;</span><span class="p">)):</span>
+     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">pp</span><span class="p">[</span><span class="s1">&#39;paper&#39;</span><span class="p">][</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
+  </pre>
+</div>
 
-    </div>
+</div>
 </div>
 </div>
 
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
+<div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>	 1 	 Bridging the Gap between Intrinsic and Perceived Relevance in Snippet Generation -- He, Jing and Duboue, Pablo and Nie,  Jian-Yun
-	 2 	 Improving {QA} Accuracy by Question Inversion -- John M. Prager and Pablo A. Duboue and Jennifer Chu-Carroll
-</pre>
+  <pre>
+         1    Bridging the Gap between Intrinsic and Perceived Relevance in Snippet Generation -- He, Jing and Duboue, Pablo and Nie,  Jian-Yun
+	 2    Improving {QA} Accuracy by Question Inversion -- John M. Prager and Pablo A. Duboue and Jennifer Chu-Carroll
+  </pre>
+</div>
+	
 </div>
 </div>
-
 </div>
 </div>
-
-</div>
+	
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">pp</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;feature AND selection&quot;</span><span class="p">)):</span>
+<div class="input_area">
+	
+<div class=" highlight hl-ipython3">
+  <pre>
+    <span></span><span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">pp</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s2">&quot;feature AND selection&quot;</span><span class="p">)):</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">idx</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">pp</span><span class="p">[</span><span class="s1">&#39;paper&#39;</span><span class="p">][</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
-</pre></div>
+  </pre>
+</div>
 
-    </div>
+</div>
 </div>
 </div>
 
 <div class="output_wrapper">
 <div class="output">
-
-
 <div class="output_area">
-
-    <div class="prompt"></div>
-
+<div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>	 1 	 Answering the question you wish they had asked: The impact of paraphrasing for Question Answering -- Pablo A. Duboue and Jennifer Chu-Carroll
-	 2 	 Statistical Acquisition of Content Selection Rules for Natural Language Generation -- Pablo A. Duboue and Kathleen R. McKeown
-	 3 	 Bridging the Gap between Intrinsic and Perceived Relevance in Snippet Generation -- He, Jing and Duboue, Pablo and Nie,  Jian-Yun
-	 4 	 Improving {QA} Accuracy by Question Inversion -- John M. Prager and Pablo A. Duboue and Jennifer Chu-Carroll
-</pre>
+  <pre>
+         1    Answering the question you wish they had asked: The impact of paraphrasing for Question Answering -- Pablo A. Duboue and Jennifer Chu-Carroll
+	 2    Statistical Acquisition of Content Selection Rules for Natural Language Generation -- Pablo A. Duboue and Kathleen R. McKeown
+	 3    Bridging the Gap between Intrinsic and Perceived Relevance in Snippet Generation -- He, Jing and Duboue, Pablo and Nie,  Jian-Yun
+	 4    Improving {QA} Accuracy by Question Inversion -- John M. Prager and Pablo A. Duboue and Jennifer Chu-Carroll
+  </pre>
+</div>
+	
 </div>
 </div>
-
 </div>
 </div>
-
+	
 </div>
-    </div>
-  </div>
+</div>
+	
 </body>
 
  
